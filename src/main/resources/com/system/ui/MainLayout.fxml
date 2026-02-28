@@ -1,0 +1,19 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<BorderPane fx:id="mainContainer" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.ui.MainController">
+    <left>
+        <VBox prefWidth="200.0" spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 20;">
+            <Label text="SMS PLUS" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold; -fx-padding: 0 0 20 0;" />
+
+            <Button maxWidth="Infinity" text="Dashboard" onAction="#showDashboard" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: LEFT;" />
+            <Button maxWidth="Infinity" text="Manage Students" onAction="#showStudentList" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: LEFT;" />
+            <Button maxWidth="Infinity" text="Data Tools (CSV)" onAction="#showDataTools" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: LEFT;" />
+            <Button maxWidth="Infinity" text="Settings"  onAction="#showSettings" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: LEFT;" />
+        </VBox>
+    </left>
+    <center>
+    </center>
+</BorderPane>

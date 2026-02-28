@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.system.ui.StudentController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="Search by ID or Name..." prefWidth="300"/>
+        <Button text="Search" onAction="#handleSearch"/>
+        <ComboBox fx:id="levelFilter" promptText="Filter by Level"/>
+        <Button text="Refresh" onAction="#loadStudentData"/>
+    </HBox>
+
+    <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="Student ID" prefWidth="100"/>
+            <TableColumn fx:id="colName" text="Full Name" prefWidth="200"/>
+            <TableColumn fx:id="colProgramme" text="Programme" prefWidth="150"/>
+            <TableColumn fx:id="colLevel" text="Level" prefWidth="80"/>
+            <TableColumn fx:id="colGpa" text="GPA" prefWidth="80"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Add New" onAction="#showAddDialog" style="-fx-base: #2ecc71;"/>
+        <Button text="Edit Selected" onAction="#showEditDialog"/>
+        <Button text="Delete" onAction="#handleDelete" style="-fx-base: #e74c3c;"/>
+    </HBox>
+    <GridPane fx:id="formPanel" vgap="10" hgap="10" style="-fx-border-color: #ccc; -fx-padding: 10;">
+        <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="idField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Programme:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="programmeField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Level:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="levelBox" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="GPA:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="gpaField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="3" alignment="CENTER_RIGHT">
+            <Button text="Clear" onAction="#clearFields"/>
+            <Button fx:id="saveBtn" text="Save Student" onAction="#handleSave" style="-fx-base: #2ecc71;"/>
+        </HBox>
+    </GridPane>
+</VBox>

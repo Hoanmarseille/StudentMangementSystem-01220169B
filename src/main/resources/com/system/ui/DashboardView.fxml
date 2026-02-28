@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="20" style="-fx-padding: 30; -fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.ui.DashboardController">
+
+    <Text text="System Overview" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;" />
+
+    <HBox spacing="20">
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+            <Label text="Total Students" style="-fx-text-fill: #7f8c8d; -fx-font-size: 14;" />
+            <Label fx:id="totalStudentsLabel" text="0" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #2980b9;" />
+        </VBox>
+
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+            <Label text="Average GPA" style="-fx-text-fill: #7f8c8d; -fx-font-size: 14;" />
+            <Label fx:id="avgGpaLabel" text="0.0" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+        </VBox>
+
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+            <Label text="Active Status" style="-fx-text-fill: #7f8c8d; -fx-font-size: 14;" />
+            <Label fx:id="activeLabel" text="0" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #f39c12;" />
+        </VBox>
+        <VBox spacing="10" style="-fx-background-color: #e74c3c; -fx-padding: 20; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label text="Inactive / At Risk" style="-fx-text-fill: white; -fx-font-size: 14;" />
+            <Label fx:id="inactiveCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: bold;" />
+        </VBox>
+    </HBox>
+
+    <Separator style="-fx-padding: 10 0;" />
+    <Label text="Quick Actions" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+    <Button text="Generate Academic Report" onAction="#handleGenerateReport" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-padding: 10 20;" />
+
+</VBox>
